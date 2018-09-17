@@ -1,0 +1,201 @@
+void setup() {
+  size(1000, 600);
+  frameRate(30);
+}//Screen size 1000*600, framerate (30) refreshes the screen 30 times a second
+
+int[] x ={120, 330, 500};
+int[] y ={190, 400, 570};
+int[] speedX={2, 1, 2};
+int[] speedY={2, 1, 2};
+//arrays which are used in spaceships and in movement
+
+void draw() {
+  background(26);//having background in draw ensures that the screen is constantly refreshed after spaceship movement
+  earth();//calls planet earth
+  fill(153, 0, 153);//colur of planet
+  ellipse(750, 200, 150, 150);//planet
+  fill(153, 0, 153, 100);//colour of planet ring including transparency parameter
+  arc(750, 200, 300, 80, 0, 300);//ring around planet
+  fill(230, 255, 0);//colour of stars
+  star();//calls star method
+  noStroke();
+  fill(230);//colour of moon
+  ellipse(100, 100, 100, 100);//moon
+  noStroke();
+  ellipse(random(width), random(height), 3, 3);//calls ellipse method using random function for flashing stars
+  spaceShip();//callls spaceship method
+  move();//calls move method
+  bounce();//calls bounce method
+}
+
+//star method
+void star() {
+  noStroke();
+  triangle(300, 60, 320, 100, 280, 100);//stars consist of overlapping triangles
+  triangle(300, 120, 280, 80, 320, 80); 
+  triangle(800, 500, 820, 470, 780, 470);
+  triangle(800, 460, 780, 490, 820, 490);
+  triangle(200, 400, 220, 370, 180, 370);
+  triangle(200, 360, 180, 390, 220, 390);
+}
+
+//move method consisting of a for loop for individual spaceships
+void move() {
+  for (int i=0; i<3; i++) {
+    x[i]=x[i]+speedX[i];
+    y[i]=y[i]+speedY[i];
+  }
+}
+
+//bounce method consisting of if/else if to keep spaceships on screen
+void bounce() {
+  for (int i=0; i<3; i++)
+    if ((x[i] > width-60) || (x[i] < 0+60)) 
+    {
+      speedX[i] =-speedX[i]  ;
+    } else if ((y[i]>height-25) || (y[i] <0+38))
+    {
+      speedY[i] =-speedY[i] ;
+    }
+}
+
+/*spaceship method including for loop which draws indidual spaceships
+ and if/else if to produce flashing lights*/
+void spaceShip() {
+  for (int i=0; i<3; i++) {
+    stroke(20, 60, 255 );
+    fill(190);
+    ellipse(x[i], y[i], 120, 50);
+    arc(x[i], y[i]-25, 60, 25, 30, 330);
+    if ( x[i] %50 !=0) {
+      fill(255, 0, 0);
+      //fill(204, 255, 51);
+    } else if (x[i] %50 ==0)
+      fill(250);
+    ellipse(x[i], y[i], 10, 10);
+    ellipse(x[i]-30, y[i], 10, 10);
+    ellipse(x[i]+30, y[i], 10, 10);
+  }
+}
+
+void earth() {//method used to create planet earth
+  fill(64, 64, 255);
+  //strokeWeight(20);
+  //stroke(20,255);
+  ellipse(400, 500, 90, 90);
+  fill(0, 255, 0);
+  noStroke();
+  ellipse(390, 475, 27, 36);
+  ellipse(395, 500, 9, 18);
+  ellipse(390, 515, 18, 22);
+  ellipse(420, 485, 4, 4);
+  ellipse(430, 485, 9, 13);
+  ellipse(435, 510, 22, 36);
+  ellipse(400, 540, 36, 13);
+  noStroke();
+}void setup() {
+  size(1000, 600);
+  frameRate(30);
+}
+//Screen size 1000*600, framerate (30) refreshes the screen 30 times a second
+
+int[] x ={120, 330, 500};
+int[] y ={190, 400, 570};
+int[] speedX={2, 1, 2};
+int[] speedY={2, 1, 2};
+//arrays which are used in spaceships and in movement
+
+void draw() {
+  background(26);
+//having background in draw ensures that the screen is constantly refreshed after spaceship movement
+  earth();//calls planet earth
+  fill(153, 0, 153);//colur of planet
+  ellipse(750, 200, 150, 150);
+//planet
+  fill(153, 0, 153, 100);
+//colour of planet ring including transparency parameter
+  arc(750, 200, 300, 80, 0, 300);
+//ring around planet
+  fill(230, 255, 0);//colour of stars
+  star();//calls star method
+  noStroke();
+  fill(230);
+//colour of moon
+  ellipse(100, 100, 100, 100);//moon
+  noStroke();
+  ellipse(random(width), random(height), 3, 3);
+//calls ellipse method using random function for flashing stars
+  spaceShip();
+//callls spaceship method
+  move();
+//calls move method
+  bounce();
+//calls bounce method
+}
+
+//star method
+void star() {
+  noStroke();
+  triangle(300, 60, 320, 100, 280, 100);//stars consist of overlapping triangles
+  triangle(300, 120, 280, 80, 320, 80); 
+  triangle(800, 500, 820, 470, 780, 470);
+  triangle(800, 460, 780, 490, 820, 490);
+  triangle(200, 400, 220, 370, 180, 370);
+  triangle(200, 360, 180, 390, 220, 390);
+}
+
+//move method consisting of a for loop for individual spaceships
+void move() {
+  for (int i=0; i<3; i++) {
+    x[i]=x[i]+speedX[i];
+    y[i]=y[i]+speedY[i];
+  }
+}
+
+//bounce method consisting of if/else if to keep spaceships on screen
+void bounce() {
+  for (int i=0; i<3; i++)
+    if ((x[i] > width-60) || (x[i] < 0+60)) 
+    {
+      speedX[i] =-speedX[i]  ;
+    } else if ((y[i]>height-25) || (y[i] <0+38))
+    {
+      speedY[i] =-speedY[i] ;
+    }
+}
+
+/*spaceship method including for loop which draws indidual spaceships
+ and if/else if to produce flashing lights*/
+void spaceShip() {
+  for (int i=0; i<3; i++) {
+    stroke(20, 60, 255 );
+    fill(190);
+    ellipse(x[i], y[i], 120, 50);
+    arc(x[i], y[i]-25, 60, 25, 30, 330);
+    if ( x[i] %50 !=0) {
+      fill(255, 0, 0);
+      //fill(204, 255, 51);
+    } else if (x[i] %50 ==0)
+      fill(250);
+    ellipse(x[i], y[i], 10, 10);
+    ellipse(x[i]-30, y[i], 10, 10);
+    ellipse(x[i]+30, y[i], 10, 10);
+  }
+}
+
+void earth() {//method used to create planet earth
+  fill(64, 64, 255);
+  //strokeWeight(20);
+  //stroke(20,255);
+  ellipse(400, 500, 90, 90);
+  fill(0, 255, 0);
+  noStroke();
+  ellipse(390, 475, 27, 36);
+  ellipse(395, 500, 9, 18);
+  ellipse(390, 515, 18, 22);
+  ellipse(420, 485, 4, 4);
+  ellipse(430, 485, 9, 13);
+  ellipse(435, 510, 22, 36);
+  ellipse(400, 540, 36, 13);
+  noStroke();
+}
