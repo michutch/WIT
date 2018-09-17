@@ -1,0 +1,16 @@
+{{#each guides}}
+<div class="ui  container">
+  <section class="ui center aligned yellow inverted stacked red segment">
+    <h2 class="ui header">
+      <div class="ui left aligned blue ribbon label">{{name}}</div>
+    </h2>
+    <p> Average Expert Rating: {{value}} </p>
+    <a href="/guide/{{id}}" button class="ui labelled icon button">
+      <i class="icon folder open"></i>Enter</button>
+    </a>
+    <a href="/dashboard/deleteguide/{{id}}" button class="ui labelled icon button">
+      <i class="icon trash"></i>Delete</button>
+    </a>
+  </section>
+</div>
+{{/each}}

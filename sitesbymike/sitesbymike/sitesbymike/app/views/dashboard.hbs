@@ -1,0 +1,54 @@
+{{> menu id="dashboard"}}
+
+<section class="ui yellow inverted raised segment">
+	<h3 class="ui header">
+	Welcome {{cust.firstName}} {{cust.lastName}}
+	</h3>
+
+<section class="ui compact orange inverted segment">
+    <h3 class="ui header">
+      Your Photographs:
+    </h3>
+   <div class="ui cards">
+    {{#each album.photos}}
+      {{> card }}
+    {{/each}}
+   </div>
+
+  </section>
+
+ <section class="ui raised inverted yellow segment">
+
+ <a href="/dashboard/deleteallpictures"> <button class="negative ui button">Delete All</button></a>
+
+  <section class="ui raised segment"> 
+
+    <div class="ui raised inverted yellow form segment">Image Upload </div>
+
+    <section class="ui raised form segment">
+
+      <form action="/dashboard/uploadpicture" method="post" enctype="multipart/form-data">
+        <div class="two fields">
+          <div class="field">
+            <label>Choose Photograph</label>
+            <input type="file" name="picture">  </input>
+          </div>
+          <div class="field">
+            <label>Title</label>
+            <input placeholder="Title" type="text" name="title">
+          </div>
+        </div>
+        <button class="ui blue submit button"> Upload </button>
+        </form>
+    </section>
+  </section>
+</section>
+
+
+  {{> addguide}}
+
+  
+
+
+
+

@@ -1,0 +1,31 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>School</th>
+      <th>Language</th>
+      <th>Website</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each guide.titles}}
+      <tr>
+        <td>
+          <div class="ui blue ribbon label">{{name}}
+        </td>
+        <td>
+          {{language}}
+        </td>
+        <td>
+          <a href="{{site}}"</a>{{site}}
+        </td>
+        <td>
+          {{value}}
+        </td>
+         <td>
+          <a href="/guide/{{../guide.id}}/deletetitle/{{id}}" class="ui icon button"><i class="icon trash"></i></a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

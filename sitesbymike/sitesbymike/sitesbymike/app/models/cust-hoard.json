@@ -1,0 +1,60 @@
+{
+  "customers": [
+    {
+      "firstName": "homer",
+      "lastName": "simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+    },
+    {
+      "firstName": "marge",
+      "lastName": "simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+    },
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson",
+      "password": "secret",
+      "id": "907eec16-513a-4876-8b30-a8b9f688488e"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Hutchinson",
+      "email": "mick.hutchinson@hotmail.com",
+      "password": "secret",
+      "id": "1129f9a8-09cc-4fac-b880-28162b3bc4e2"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Hutchinson",
+      "email": "mick.hutchinson@hotmail.com",
+      "password": "secret",
+      "id": "f3785973-fcaa-4901-a9ae-049b06aa180c"
+    },
+    {
+      "firstName": "Johnny",
+      "lastName": "Wishbone",
+      "email": "johnny@wishbone.com",
+      "password": "secret",
+      "id": "5d611cee-337c-4fb0-9a86-ded1378b0ba1"
+    },
+    {
+      "firstName": "Hank",
+      "lastName": "Williams",
+      "email": "hank@email.com",
+      "password": "secret",
+      "id": "083e96a9-7812-4483-93b1-f815c3c72a39"
+    },
+    {
+      "firstName": "Suzanne ",
+      "lastName": "Vega",
+      "email": "suzanne@hotmail.com",
+      "password": "secret",
+      "id": "29f1ce85-36b6-4f22-be32-4b6c3f3dcaab"
+    }
+  ]
+}
